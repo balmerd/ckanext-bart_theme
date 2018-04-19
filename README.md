@@ -1,5 +1,5 @@
 # BART Theme for CKAN
-#### https://bitbucket.org/transsightdev/ckanext-bart_theme
+#### https://github.com/balmerd/ckanext-bart_theme
 
 ## Configuration
 In `/etc/ckan/default/`, apply the settings below to either 'development.ini' or 'production.ini':
@@ -14,7 +14,7 @@ ckan.plugins = bart_theme
 **1) From source**
 ```
 <activate virtualenv> (see below)
-git clone https://bitbucket.org/transsightdev/ckanext-bart_theme.git
+git clone https://github.com/balmerd/ckanext-bart_theme.git
 cd ckanext-bart_theme/
 sudo python setup.py install
 sudo service apache2 [restart|reload] (if hosted on apache)
@@ -23,7 +23,7 @@ sudo service apache2 [restart|reload] (if hosted on apache)
 **2) Shell**
 ```
 <activate virtualenv> (see below)
-sudo pip install [-e] git+https://bitbucket.org/transsightdev/ckanext-bart_theme.git#egg=ckanext-bart_theme
+sudo pip install -e git+https://github.com/balmerd/ckanext-bart_theme.git#egg=ckanext-bart_theme
 ```
 
 ** Shell Note:**
