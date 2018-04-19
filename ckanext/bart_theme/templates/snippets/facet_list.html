@@ -1,0 +1,10 @@
+{% ckan_extends %}
+ 
+{% block facet_list_heading %}
+  <h2 class="module-heading">
+    <i class="fa fa-medium fa-filter"></i>
+    {% set title = title or h.get_facet_title(name) %}
+    {{ h.bart_theme_fix_facet_title(title) }}
+  </h2>
+{% endblock %}
+

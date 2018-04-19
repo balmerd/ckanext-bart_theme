@@ -1,0 +1,25 @@
+{% ckan_extends %}
+
+{% block footer_content %}
+  <div class="row-fluid">
+    <div class="span12 footer-links">
+      <div class="pull-left">
+        <a href="http://bart.gov/">BART</a>
+      </div>
+      <div class="hr"></div>
+      <div class="pull-left">
+        {{ h.bart_theme_copyright() | safe }}
+      </div>
+      <div class="pull-right">
+        <a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer_debug %}
+  {% if g.debug %}
+    {% include 'snippets/debug.html' %}
+  {% endif %}
+{% endblock %}
+

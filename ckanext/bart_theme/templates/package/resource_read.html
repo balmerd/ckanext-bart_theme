@@ -1,0 +1,31 @@
+{% ckan_extends %}
+
+{% block resource_actions_inner %}
+
+{# required because we have one database and two ckan instances, and res.url contains the hardcoded domain where it was uploaded #}
+{% set download_url = '/datastore/dump/' + res.id %}
+
+{% if h.check_access('package_update', {'id':pkg.id }) %}
+  <li>{% link_for _('Manage'), controller='package', action='resource_edit', id=pkg.name, resource_id=res.id, class_='btn', icon='wrench' %}</li>
+{% endif %}
+{% if res.url and h.is_url(res.url) %}
+  <li><!-- was using res.url -->
+    <a href="{{ download_url }}" class="btn btn-primary resource-url-analytics resource-type-{{ res.resource_type }}">
+      {% if res.resource_type in ('listing', 'service') %}
+        <i class="fa fa-eye"></i> {{ _('View') }}
+      {% elif  res.resource_type == 'api' %}
+        <i class="fa fa-key"></i> {{ _('API Endpoint') }}
+      {% elif (not res.has_views or not res.can_be_previewed) and not res.url_type == 'upload' %}
+        <i class="fa fa-external-link"></i> {{ _('Go to resource') }}
+      {% else %}
+        <i class="fa fa-arrow-circle-o-down"></i> {{ _('Download') }}
+      {% endif %}
+    </a>
+  </li>
+{% endif %}
+{% endblock %}
+
+{% block resource_read_url %}
+  <!-- hide it -->
+{% endblock %}
+

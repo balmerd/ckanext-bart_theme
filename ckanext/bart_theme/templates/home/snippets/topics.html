@@ -1,0 +1,15 @@
+{% block groups_list %}
+  {% if c.page.items or request.params %}
+    {% if c.page.items %}
+      {% snippet "group/snippets/group_list.html", groups=c.page.items %}
+    {% endif %}
+  {% else %}
+    <p class="empty">
+      {{ _('There are currently no topics for this site') }}.
+      {% if h.check_access('group_create') %}
+        {% link_for _('How about creating one?'), controller='group', action='new' %}</a>.
+      {% endif %}
+    </p>
+  {% endif %}
+{% endblock %}
+

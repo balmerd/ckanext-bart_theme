@@ -1,0 +1,42 @@
+{% ckan_extends %}
+
+{% block resource_item_explore_links %}
+
+{# required because we have one database and two ckan instances, and res.url contains the hardcoded domain where it was uploaded #}
+{% set download_url = '/datastore/dump/' + res.id %}
+
+<!-- links appears under the dataset Explore button -->
+
+<li>
+  <a href="{{ url }}" aria-label="Preview or More Info">
+    {% if res.has_views %}
+      <i class="fa fa-bar-chart-o"></i>
+      {{ _('Preview') }}
+    {% else %}
+      <i class="fa fa-info-circle"></i>
+      {{ _('More information') }}
+    {% endif %}
+  </a>
+</li>
+{% if res.url and h.is_url(res.url) %}
+<li><!-- was using res.url -->
+  <a href="{{ download_url }}" class="resource-url-analytics" target="_blank" aria-label="Download or go to resource">
+    {% if res.has_views or res.url_type == 'upload' %}
+      <i class="fa fa-arrow-circle-o-down"></i>
+      {{ _('Download') }}
+    {% else %}
+      <i class="fa fa-external-link"></i>
+      {{ _('Go to resource') }}
+    {% endif %}
+  </a>
+</li>
+{% endif %}
+{% if can_edit %}
+<li>
+  <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=res.id) }}" aria-label="Edit">
+    <i class="fa fa-pencil-square-o"></i>
+    {{ _('Edit') }}
+  </a>
+</li>
+{% endif %}
+{% endblock %}

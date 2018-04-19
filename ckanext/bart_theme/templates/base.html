@@ -1,0 +1,13 @@
+{% ckan_extends %}
+
+{% block styles %}
+  {{ super() }}
+	{% resource 'bart_theme/bart_theme.css' %}
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+	{% resource 'bart_theme/bart_theme.js' %}
+{% endblock %}
+

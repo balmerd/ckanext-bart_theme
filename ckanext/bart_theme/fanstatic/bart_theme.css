@@ -1,0 +1,235 @@
+body, [role="main"], .main {
+  color: #1e1e1e;
+	background-color: #fafafa !important;
+	background-image: none;
+	font-family: 'Lato', sans-serif;
+}
+
+.btn-navbar { /* to expand menu button when window is reduced */
+  display: none !important;
+}
+
+#wrapper { /* for sticky footer -- see: https://css-tricks.com/couple-takes-sticky-footer */
+  min-height: calc(100vh - 5.35em);
+  background-color: #f2f1ee !important;
+}
+
+.masthead {
+  height: 3rem;
+  min-height: 3rem;
+  background-color: #eee;
+  border-bottom: 1px solid #aaa;
+}
+.masthead .debug { /* hide controller and action names */
+  display: none;
+}
+.masthead .container {
+  padding: 0 !important;
+}
+.masthead .header-image a.title {
+	display: inline-block;
+	margin-top: 14px;
+  color: #1e1e1e;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+.masthead .header-image a:hover {
+  text-decoration: none;
+}
+.masthead .header-image a.logo {
+  position: relative;
+  top: 3px;
+  float: left;
+  width: 70px;
+  height: 42px;
+  background-image: url('images/bart-header-logo.png');
+  background-size: 60px;
+  background-repeat: no-repeat;
+}
+.masthead .navigation a {
+  color: #1e1e1e !important;
+}
+.masthead .nav-collapse {
+  padding-top: 5px;
+}
+.masthead .site-search {
+  margin-top: 4px;
+}
+.masthead .container {
+  padding: 0.5rem 0;
+}
+.navbar .nav > li > a {
+  border: 1px solid #eee !important;
+}
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus {
+  color: #1e1e1e !important;
+  background-color: #ddd !important;
+  border: 1px solid #aaa !important;
+}
+.navbar .nav > li.active > a {
+  color: #fff !important;
+  background-color: #206b82 !important;
+}
+
+.site-footer {
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #126388; /* complement to intro-text */
+  /* for sticky footer */
+  height: 3em;
+  overflow: hidden;
+  padding: 10px 0;
+}
+.site-footer div.hr {
+  clear: both;
+  margin: 0 0 5px;
+  height: 5px;
+  border-bottom: 1px solid #fafafa;
+}
+.site-footer .attribution { /* no space between <hr> tags */
+  margin: 0;
+}
+
+#field-sitewide-search {
+  font-size: 0.8rem;
+  border-radius: 15px;
+}
+
+/* Home page */
+
+.homepage [role="main"] {
+  padding-top: 0;
+  background-color: #f2f1ee !important;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  padding: 2rem;
+  color: #fff;
+  background-color: #0b3d64;
+  font-style: italic;
+}
+
+/* Topics */
+
+.homepage .topics {
+  background-color: #fff;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.homepage .topics .row-fluid {
+  display: table;
+  width: auto;
+  margin: 0 auto;
+}
+.homepage .topic {
+  cursor: pointer;
+  display: table-cell;
+  width: 115px;
+  padding: 10px 4px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #fff; /* not visible, but takes up the space */
+  /* needed for Phase 2 datasets */
+  float: left;
+  height: 5rem;
+  margin-bottom: 1rem;
+}
+.homepage .topic:hover {
+  border-color: #aaa;
+  background-color: aliceblue;
+}
+.homepage .topic-title {
+  margin-top: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+.homepage .topic img {
+  max-height: 50px;
+}
+
+.dataset-menu {
+  position: absolute;
+  height: auto;
+  list-style: none;
+  border: 1px solid #aaa;
+  border-top: 0;
+  background-color: aliceblue;
+  z-index: 999;
+}
+.dataset-menu-item {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  padding: 2px 4px;
+  border-top: 1px solid #aaa;
+  font-size: 0.7rem;
+}
+.dataset-menu-item:hover {
+  background-color: #d7ecff;
+}
+
+/* Features */
+
+.features-title {
+  margin-top: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+}
+.feature {
+  min-height: 11rem;
+  max-height: 11rem;
+}
+.feature .text {
+  padding: 1rem;
+  background-color: #fff;
+  min-height: inherit;
+  max-height: inherit;
+}
+.feature .feature-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.feature .text p {
+  padding-top: 0.5rem;
+}
+.feature .image {
+  padding: 1rem;
+  background-color: #fff;
+  background-size: 100% !important;
+  background-repeat: no-repeat;
+  background-image: url('images/kpi-icon.jpg');
+  min-height: inherit;
+  max-height: inherit;
+}
+
+/* Topics list page */
+
+.media-item .media-image {
+  max-height: 50px;
+}
+
+.media-item .media-heading, .media-item .count {
+  font-size: 0.8rem;
+}
+
+/* Hide Create/Update/Insert on CKAN Data API dialog */
+
+#collapse-endpoints tr:nth-of-type(1),
+#collapse-endpoints tr:nth-of-type(2) {
+  display: none;
+}
+
+
+/* from Bootstrap 3 */
+
+.list-unstyled {
+  margin-left: 0; /* my mod */
+  padding-left: 0;
+  list-style: none;
+}
