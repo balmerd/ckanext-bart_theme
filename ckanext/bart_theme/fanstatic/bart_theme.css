@@ -42,7 +42,7 @@ body, [role="main"], .main {
   float: left;
   width: 70px;
   height: 42px;
-  background-image: url('images/bart-header-logo.png');
+  background-image: url('/bart-header-logo.png');
   background-size: 60px;
   background-repeat: no-repeat;
 }
@@ -203,7 +203,7 @@ body, [role="main"], .main {
   background-color: #fff;
   background-size: 100% !important;
   background-repeat: no-repeat;
-  background-image: url('images/kpi-icon.jpg');
+  background-image: url('/kpi-icon.jpg');
   min-height: inherit;
   max-height: inherit;
 }
