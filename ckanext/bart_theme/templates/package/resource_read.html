@@ -3,7 +3,7 @@
 {% block resource_actions_inner %}
 
 {# required because we have one database and two ckan instances, and res.url contains the hardcoded domain where it was uploaded #}
-{% set download_url = '/datastore/dump/' + res.id %}
+{# set download_url = '/datastore/dump/' + res.id #}
 
 {% if h.check_access('package_update', {'id':pkg.id }) %}
   <li>{% link_for _('Manage'), controller='package', action='resource_edit', id=pkg.name, resource_id=res.id, class_='btn', icon='wrench' %}</li>
@@ -28,4 +28,3 @@
 {% block resource_read_url %}
   <!-- hide it -->
 {% endblock %}
-
