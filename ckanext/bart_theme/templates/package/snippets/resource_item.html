@@ -2,9 +2,6 @@
 
 {% block resource_item_explore_links %}
 
-{# required because we have one database and two ckan instances, and res.url contains the hardcoded domain where it was uploaded #}
-{% set download_url = '/datastore/dump/' + res.id %}
-
 <!-- links appears under the dataset Explore button -->
 
 <li>
@@ -19,8 +16,8 @@
   </a>
 </li>
 {% if res.url and h.is_url(res.url) %}
-<li><!-- was using res.url -->
-  <a href="{{ download_url }}" class="resource-url-analytics" target="_blank" aria-label="Download or go to resource">
+<li>
+  <a href="{{ res.url }}" class="resource-url-analytics" target="_blank">
     {% if res.has_views or res.url_type == 'upload' %}
       <i class="fa fa-arrow-circle-o-down"></i>
       {{ _('Download') }}
