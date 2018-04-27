@@ -13,23 +13,20 @@ ckan.plugins = bart_theme
 
 **1) From source**
 ```
-<activate virtualenv> (see below)
-git clone https://github.com/balmerd/ckanext-bart_theme.git
+<activate virtualenv> (see Linux Admin below)
+cd /usr/lib/ckan/default
+sudo rm -rf ckanext-bart_theme (to remove existing code)
+sudo git clone https://github.com/balmerd/ckanext-bart_theme.git
 cd ckanext-bart_theme/
-sudo python setup.py install
-sudo service apache2 [restart|reload] (if hosted on apache)
+sudo python setup.py develop
+sudo service apache2 reload
 ```
 
 **2) Shell**
 ```
-<activate virtualenv> (see below)
+<activate virtualenv> (see Linux Admin below)
 sudo pip install -e git+https://github.com/balmerd/ckanext-bart_theme.git#egg=ckanext-bart_theme
 ```
-
-** Shell Note:**
-
-  0. -e option: use when in development mode.
-  1. pip (1.5) might need to be updated to the latest version if `-e` option is needed.
 
 ## Linux Admin
 
