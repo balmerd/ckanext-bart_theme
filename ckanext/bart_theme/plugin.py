@@ -12,7 +12,7 @@ assert not log.disabled
 def fix_facet_title(title):
   '''Change Groups to Topics. Called from /snippets/facet_list.html'''
   return 'Topics' if title == 'Groups' else title
-    
+
 
 def get_json(obj):
   '''Remove unicode prefixes before passing JSON data to client-side code.'''
@@ -21,8 +21,8 @@ def get_json(obj):
 
 def dump(obj):
   '''Dump object properties.'''
-  log.info(obj);      
-      
+  log.info(obj);
+
 
 def copyright():
   '''Get copyright with current year.'''
@@ -32,6 +32,8 @@ def copyright():
 
 def all_groups():
   '''Return a list of the groups.'''
+  other_group = None
+  ordered_group_info = []
 
   # Get a list of all the groups.
   group_info = toolkit.get_action('group_list')(data_dict={'all_fields': True})
@@ -39,20 +41,33 @@ def all_groups():
   # Get a list of all the packages (datasets), and their Groups.
   all_packages = toolkit.get_action('package_search')(data_dict={'rows': 1000})
 
-  # iterate thru Groups and collect Packages (datasets) that belong to that Group
-  
+  # iterate thru Groups and move 'Other' (if defined) to the end of the list
+
   for group in group_info:
+    title = h.get_translated(group, 'title') or group.display_name
+    if title == 'Other':
+      other_group = group
+    else:
+      ordered_group_info.append(group)
+
+  if (other_group is not None) {
+    ordered_group_info.append(other_group)
+  }
+
+  # iterate thru Groups and collect Packages (datasets) that belong to that Group
+
+  for group in ordered_group_info:
     group['datasets'] = []
-  
+
     for package in all_packages['results']:
       if package['type'] == 'dataset':
         for packageGroup in package['groups']:
           if group['display_name'] == packageGroup['display_name']:
             group['datasets'].append({ 'title': package['title'], 'name' : package['name'], 'resource_id': package['resources'][0]['id'] })
-  
-  return group_info
 
-  
+  return ordered_group_info
+
+
 class Bart_ThemePlugin(plugins.SingletonPlugin):
   plugins.implements(plugins.IConfigurer)
   plugins.implements(plugins.ITemplateHelpers)
@@ -89,4 +104,3 @@ class Bart_ThemePlugin(plugins.SingletonPlugin):
       'bart_theme_all_groups': all_groups,
       'bart_theme_fix_facet_title': fix_facet_title
     }
-

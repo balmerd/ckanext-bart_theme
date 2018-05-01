@@ -1,6 +1,6 @@
 {
   "description": "usage: npm run lint",
   "scripts": {
-    "lint": "jshint ./ckanext/bart_theme/public/js/**.js --exclude  ./ckanext/bart_theme/public/js/vendor"
+    "lint": "jshint ."
   }
 }
