@@ -50,9 +50,9 @@ def all_groups():
     else:
       ordered_group_info.append(group)
 
-  if (other_group is not None) {
+  if other_group is not None:
     ordered_group_info.append(other_group)
-  }
+
 
   # iterate thru Groups and collect Packages (datasets) that belong to that Group
 
