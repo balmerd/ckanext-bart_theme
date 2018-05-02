@@ -5,9 +5,9 @@
       <p>Here you will find data, tools, and resources to conduct research,<br>develop web and mobile applications, design data visualizations, and more.</p>
     </div>
   </div>
-  <div class="container-fluid topics">
+  <div class="container topics">
     <h1 class="topic-title">Data Topics</h1>
-    <div class="row-fluid">
+    <div class="row">
       {% for group in h.bart_theme_all_groups() %}
         {% set type = group.type or 'group' %}
         {% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
