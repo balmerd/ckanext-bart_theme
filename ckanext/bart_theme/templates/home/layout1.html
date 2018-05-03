@@ -7,7 +7,7 @@
   </div>
   <div class="container topics">
     <h1 class="topic-title">Data Topics</h1>
-    <div class="row">
+    <div xxx-class="row">
       {% for group in h.bart_theme_all_groups() %}
         {% set type = group.type or 'group' %}
         {% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
