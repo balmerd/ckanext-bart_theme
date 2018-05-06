@@ -45,7 +45,7 @@ def all_groups():
 
   for group in group_info:
     title = group['title'] or group.display_name
-    if title == 'Other':
+    if title == 'Other' or title == 'Others':
       other_group = group
     else:
       ordered_group_info.append(group)
