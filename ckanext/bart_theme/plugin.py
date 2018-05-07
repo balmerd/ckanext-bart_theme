@@ -33,13 +33,17 @@ def copyright():
 def all_groups():
   '''Return a list of the groups.'''
   other_group = None
+  ordered_packages= []
   ordered_group_info = []
 
   # Get a list of all the groups.
-  group_info = toolkit.get_action('group_list')(data_dict={'all_fields': True})
+  group_info = toolkit.get_action('group_list')(data_dict={'all_fields': True, 'sort': 'title asc'})
 
   # Get a list of all the packages (datasets), and their Groups.
-  all_packages = toolkit.get_action('package_search')(data_dict={'sort': 'title asc', 'rows': 1000})
+  all_packages = toolkit.get_action('package_search')(data_dict={'rows': 1000})['results']
+
+  # Sort packages by name
+  ordered_packages = sorted(all_packages, key=lambda package: package.title)
 
   # iterate thru Groups and move 'Other' (if defined) to the end of the list
 
@@ -59,7 +63,7 @@ def all_groups():
   for group in ordered_group_info:
     group['datasets'] = []
 
-    for package in all_packages['results']:
+    for package in ordered_packages:
       if package['type'] == 'dataset':
         for packageGroup in package['groups']:
           if group['display_name'] == packageGroup['display_name']:
