@@ -39,7 +39,7 @@ def all_groups():
   group_info = toolkit.get_action('group_list')(data_dict={'all_fields': True})
 
   # Get a list of all the packages (datasets), and their Groups.
-  all_packages = toolkit.get_action('package_search')(data_dict={'rows': 1000, 'sort': 'name asc'})
+  all_packages = toolkit.get_action('package_search')(data_dict={'sort': 'title asc', 'rows': 1000})
 
   # iterate thru Groups and move 'Other' (if defined) to the end of the list
 
