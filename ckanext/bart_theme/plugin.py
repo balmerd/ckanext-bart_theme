@@ -42,7 +42,7 @@ def all_groups():
   # Get a list of all the packages (datasets), and their Groups.
   all_packages = toolkit.get_action('package_search')(data_dict={'rows': 1000})['results']
 
-  # Sort packages by name
+  # Sort packages by title
   ordered_packages = sorted(all_packages, key=lambda package: package['title'])
 
   # iterate thru Groups and move 'Other' (if defined) to the end of the list
@@ -56,7 +56,6 @@ def all_groups():
 
   if other_group is not None:
     ordered_group_info.append(other_group)
-
 
   # iterate thru Groups and collect Packages (datasets) that belong to that Group
 
