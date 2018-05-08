@@ -43,7 +43,7 @@ def all_groups():
   all_packages = toolkit.get_action('package_search')(data_dict={'rows': 1000})['results']
 
   # Sort packages by name
-  ordered_packages = sorted(all_packages, key=lambda package: package.title)
+  ordered_packages = sorted(all_packages, key=lambda package: package['title'])
 
   # iterate thru Groups and move 'Other' (if defined) to the end of the list
 
