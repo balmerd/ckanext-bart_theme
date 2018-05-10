@@ -7,7 +7,7 @@
   </div>
   <div class="container topics">
     <h1 class="topic-title">Data Topics</h1>
-    <div style="padding-left:1rem;">
+    <div class="topics-wrapper">
       {% for group in h.bart_theme_all_groups() %}
         {% set type = group.type or 'group' %}
         {% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
@@ -15,8 +15,10 @@
         {% set titleHtml = title.replace(" ", "<br>") | safe %}
         {% set datasets = h.bart_theme_get_json(group['datasets']) %}
         <div class="topic" data-datasets="{{ datasets }}">
-          <img data-url="{{ url }}" src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}">
-          <div class="topic-title">{{ titleHtml }}</div>
+          <div class="topic-container">
+            <img data-url="{{ url }}" src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}">
+            <div class="topic-title">{{ titleHtml }}</div>
+          </div>
         </div>
       {% endfor %}
     </div>
