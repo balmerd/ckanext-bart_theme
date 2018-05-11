@@ -139,7 +139,7 @@ body, [role="main"], .main {
   margin-bottom: 1rem;
   color: #fff;
   background-color: #0196cd;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 .homepage .topic-container {
   z-index: 999; /* so that arrow is under the box */
