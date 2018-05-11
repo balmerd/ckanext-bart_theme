@@ -1,36 +1,31 @@
-body, [role="main"], .main { /* redesign */
+body, [role="main"], .main {
   color: #1e1e1e;
   background-image: none;
   background-color: #fff !important;
 	font-family: Arial,Helvetica,sans-serif;
-}
-@supports (-moz-appearance:none) { /* targeting firefox only */
-  font-family: serif;
 }
 
 .btn-navbar { /* to expand menu button when window is reduced */
   display: none !important;
 }
 
-#wrapper { /* redesign */
+#wrapper {
   /* for sticky footer -- see: https://css-tricks.com/couple-takes-sticky-footer */
   min-height: calc(100vh - 5.35em);
-  /* background-color: #f2f1ee !important; */
-  /* redesign */
   background-color: #fff !important;
 }
 
-.wrapper { /* redesign */
+.wrapper {
   border: none;
   box-shadow: none;
   background-color: #fff !important;
   background-image: none !important;
 }
 
-header.module-content { /* redesign */
+header.module-content {
   background-color: #fff !important;
 }
-.module-content .image { /* redesign */
+.module-content .image {
   background-color: #0196cd;
 }
 
@@ -118,7 +113,7 @@ header.module-content { /* redesign */
 
 /* Home page */
 
-.homepage [role="main"] { /* redesign */
+.homepage [role="main"] {
   padding-top: 0;
   background-color: #fff !important;
 }
@@ -185,6 +180,45 @@ header.module-content { /* redesign */
   z-index: 1 !important;
 }
 
+/* http://www.cssarrowplease.com/ */
+/* https://stackoverflow.com/questions/16180107/arrow-box-with-css */
+.dataset-menu-container {
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  text-align: left;
+  z-index: 999;
+  /* width set in bart_theme.js */
+}
+.dataset-menu-container:before {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  left: -142px;
+  width: 0;
+  height: 0;
+  border: 71px solid transparent;
+  border-right: 71px solid #0196cd;
+  z-index: 999;
+}
+.dataset-menu-container:after {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  left: -142px;
+  width: 0;
+  height: 0;
+  border: 71px solid transparent;
+  border-right: 71px solid #0196cd;
+  z-index: 999;
+}
+.dataset-menu-container > div:nth-child(1) { /* target only first menu item column */
+  padding-left: 0.9rem;
+}
+.dataset-menu-container ul {
+  margin-bottom: 0;
+}
+
 .dataset-menu {
   position: absolute;
   list-style: none;
@@ -211,9 +245,6 @@ header.module-content { /* redesign */
   max-width: 10rem;
   padding: 0.5rem 0.5rem 0.5rem 0;
 }
-.arrow > div:nth-child(1) { /* target only first menu item column */
-  padding-left: 0.9rem;
-}
 .dataset-menu li {
   line-height: 1rem;
   padding-bottom: 1rem;
@@ -226,42 +257,6 @@ header.module-content { /* redesign */
 }
 .dataset-menu-item.unfocused {
   opacity: 0.6;
-}
-
-/* http://www.cssarrowplease.com/ */
-/* https://stackoverflow.com/questions/16180107/arrow-box-with-css */
-.arrow {
-  position: relative;
-  height: auto;
-  min-height: 100%;
-  text-align: left;
-  z-index: 999;
-  /* width set in css */
-}
-.arrow:before {
-  content: " ";
-  position: absolute;
-  top: -1px;
-  left: -142px;
-  width: 0;
-  height: 0;
-  border: 71px solid transparent;
-  border-right: 71px solid #0196cd;
-  z-index: 999;
-}
-.arrow:after {
-  content: " ";
-  position: absolute;
-  top: -1px;
-  left: -142px;
-  width: 0;
-  height: 0;
-  border: 71px solid transparent;
-  border-right: 71px solid #0196cd;
-  z-index: 999;
-}
-.arrow ul {
-  margin-bottom: 0;
 }
 
 /* Features */
