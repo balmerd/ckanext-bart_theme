@@ -115,9 +115,9 @@ header.module-content { /* redesign */
 
 /* Home page */
 
-.homepage [role="main"] {
+.homepage [role="main"] { /* redesign */
   padding-top: 0;
-  background-color: #f2f1ee !important;
+  background-color: #fff !important;
 }
 
 .intro-text {
@@ -206,7 +206,10 @@ header.module-content { /* redesign */
   margin-left: 0;
   display: inline-block;
   max-width: 10rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+.arrow > div:nth-child(1) { /* target only first menu item column */
+  padding-left: 0.9rem;
 }
 .dataset-menu li {
   line-height: 1rem;
