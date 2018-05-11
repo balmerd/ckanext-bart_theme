@@ -24,6 +24,13 @@ body, [role="main"], .main { /* redesign */
   background-image: none !important;
 }
 
+header.module-content { /* redesign */
+  background-color: #fff !important;
+}
+.module-content .image { /* redesign */
+  background-color: #0196cd;
+}
+
 .masthead {
   height: 3rem;
   min-height: 3rem;
