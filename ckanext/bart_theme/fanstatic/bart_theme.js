@@ -3,7 +3,7 @@ $(document).ready(function() {
   var wasFocused = false;
 
   // show topic page on click
-  $('.topic2 img').click(function() {
+  $('.topic img').click(function() {
     window.location.href = $(this).data().url;
   });
 
@@ -19,7 +19,7 @@ $(document).ready(function() {
   });
 
   // fade other menu items on hover
-  $('.topic2').on('mouseover', '.dataset-menu-item', function() {
+  $('.topic').on('mouseover', '.dataset-menu-item', function() {
     $('.dataset-menu-item').addClass('unfocused');
     $(this).removeClass('unfocused');
   }).on('mouseout', '.dataset-menu-item', function() {
@@ -27,7 +27,7 @@ $(document).ready(function() {
   });
 
   // show menu on hover in
-  $('.topic2').hover(function() {
+  $('.topic').hover(function() {
     var menu = [];
     var count = 0;
     var menu_items = [];
@@ -75,7 +75,7 @@ $(document).ready(function() {
         wasFocused = false;
         this$.removeClass('active');
         $('.dataset-menu').remove();
-        $('.topic2').removeClass('behind-other-topics');
+        $('.topic').removeClass('behind-other-topics');
       }).on('click', 'li', function() {
         window.location.href = $(this).data().url;
       });
@@ -83,7 +83,7 @@ $(document).ready(function() {
   }, function() {
     if (!wasFocused) {
       $('.dataset-menu').remove();
-      $('.topic2').removeClass('active behind-other-topics');
+      $('.topic').removeClass('active behind-other-topics');
     }
   });
 });

@@ -136,7 +136,6 @@ body, [role="main"], .main {
   height: 6rem;
   cursor: pointer;
   text-align: center;
-  /* border: 1px solid #fff; /* not visible, but takes up the space REMOVE THIS */ */
   margin-bottom: 1rem;
   color: #fff;
   background-color: #0196cd;
@@ -280,7 +279,9 @@ body, [role="main"], .main {
 /* Topics list page */
 
 .media-item .media-image {
-  max-height: 50px;
+  max-height: 52px; /* to max home page */
+  background-color: #0196cd;
+  padding: 5px;
 }
 
 .media-item .media-heading, .media-item .count {
