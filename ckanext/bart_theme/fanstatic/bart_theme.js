@@ -55,9 +55,9 @@ $(document).ready(function() {
 
     this$.addClass('active').siblings().addClass('behind-other-topics'); // all but "this"
 
-    $('<div class="dataset-menu"><div class="arrow">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
+    $('<div class="dataset-menu"><div class="dataset-menu-container">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
 
-    $('.dataset-menu .arrow').css('width', (11 * menu.length) + 'rem'); // base size is 11 rem
+    $('.dataset-menu .dataset-menu-container').css('width', (11 * menu.length) + 'rem'); // base size is 11 rem
 
     setTimeout(function() {
       // show dataset preview page on link
