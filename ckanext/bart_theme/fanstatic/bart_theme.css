@@ -1,17 +1,27 @@
-body, [role="main"], .main {
+body, [role="main"], .main { /* redesign */
   color: #1e1e1e;
-	background-color: #fafafa !important;
-	background-image: none;
-	font-family: 'Lato', sans-serif;
+  background-image: none;
+  background-color: #fff !important;
+	font-family: Arial,Helvetica,sans-serif;
 }
 
 .btn-navbar { /* to expand menu button when window is reduced */
   display: none !important;
 }
 
-#wrapper { /* for sticky footer -- see: https://css-tricks.com/couple-takes-sticky-footer */
+#wrapper { /* redesign */
+  /* for sticky footer -- see: https://css-tricks.com/couple-takes-sticky-footer */
   min-height: calc(100vh - 5.35em);
-  background-color: #f2f1ee !important;
+  /* background-color: #f2f1ee !important; */
+  /* redesign */
+  background-color: #fff !important;
+}
+
+.wrapper { /* redesign */
+  border: none;
+  box-shadow: none;
+  background-color: #fff !important;
+  background-image: none !important;
 }
 
 .masthead {
