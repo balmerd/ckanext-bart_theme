@@ -4,6 +4,9 @@ body, [role="main"], .main { /* redesign */
   background-color: #fff !important;
 	font-family: Arial,Helvetica,sans-serif;
 }
+@supports (-moz-appearance:none) { /* targeting firefox only */
+  font-family: serif;
+}
 
 .btn-navbar { /* to expand menu button when window is reduced */
   display: none !important;
