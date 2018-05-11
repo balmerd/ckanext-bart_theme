@@ -29,7 +29,6 @@ $(document).ready(function() {
   // show menu on hover in
   $('.topic').hover(function() {
     var menu = [];
-    var count = 0;
     var menu_items = [];
     var this$ = $(this);
     var height = this$.outerHeight();
@@ -37,34 +36,27 @@ $(document).ready(function() {
     var position = this$.position();
     var datasets = this$.data().datasets;
 
-    var style = { // compute size (TODO: move this to css)
+    var style = {
       left: width + 20, // 20 is arrow width
       top: - 20 - 2 // - 2 to fix arrow position
     };
 
-    datasets.map(function(dataset) {
+
+    _.forEach(datasets, function(dataset) { // create resource menu
       var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
-
-      if (count > 4) { // split onto another <ul>
-        menu.push('<ul>' + menu_items.join('') +'</ul>');
-        menu_items = [];
-        count = 0;
-      } else {
-        count++;
-      }
-
       menu_items.push('<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>')
     });
 
-    if (menu_items.length) { // we got leftovers (TODO: absolute so it shows at top instead of bottom)
-      menu.push('<ul>' + menu_items.join('') +'</ul>');
-    }
+// TODO: add class to topic to identify which one should get left menu instead of right
+
+    _.forEach(_.chunk(menu_items, 5), function(links, index) {
+      menu.push('<div class="pull-left"><ul>' + links.join('') +'</ul></div>');
+    });
 
     this$.addClass('active').siblings().addClass('behind-other-topics'); // all but "this"
 
     $('<div class="dataset-menu"><div class="arrow">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
 
-    // adjust size based on number of columns
     $('.dataset-menu .arrow').css('width', (11 * menu.length) + 'rem'); // base size is 11 rem
 
     setTimeout(function() {
