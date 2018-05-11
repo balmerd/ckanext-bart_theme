@@ -42,7 +42,7 @@ $(document).ready(function() {
       top: - 20 - 2 // - 2 to fix arrow position
     };
 
-    _.forEach(datasets, function(dataset) {
+    datasets.map(function(dataset) {
       var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
 
       if (count > 4) { // split onto another <ul>
