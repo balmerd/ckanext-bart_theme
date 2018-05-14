@@ -305,43 +305,35 @@ h1.topics-header { /* applies to "Data Topics" */
   opacity: 0.6;
 }
 
-/* Features (redesigned) */
+/* featured section on homepage */
 
-.features {
+.featured-wrapper {
+  margin-top: 80px;
+   margin-bottom: 125px;
+  padding: 30px 0;
   background-color: #0f3658;
-  padding: 20px 0 30px 0;
 }
-.features-title {
-  margin-top: 5px;
-  font-weight: bold;
-  text-align: center;
-  margin: 1rem 0;
+.featured {
   color: #eee;
+  margin: 0 auto;
+}
+.featured-header {
+  font-weight: bold;
   text-align: left;
   font-size: 2rem;
   margin: 0;
-  padding-bottom: 1rem;
 }
-.features-icon {
-  position: relative;
-  top: -20px;
-}
-.feature {
-  color: #eee;
-  position: relative;
-}
-.feature .text {
+.featured .text {
   margin-left: 0;
-  font-size: 12.8px;
-  width: 68%;
+  font-size: 12.8px; /* hardcoded */
+  width: 68%; /* so that words break closest to the pdf (but doesn't leave room for icon) */
 }
-.feature .image {
-  width: 20%;
-  margin-left: 20px;
+.featured .image {
   position: relative;
-  top: -30px;
+  top: -15px;
+  width: 20%;
 }
-.feature .image a {
+.featured .image a {
   margin: 0;
 }
 
