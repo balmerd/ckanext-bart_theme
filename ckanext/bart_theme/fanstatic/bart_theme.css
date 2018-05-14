@@ -7,7 +7,7 @@ body, [role="main"], .main {
   color: #1e1e1e;
   background-image: none;
   background-color: #fff !important;
-	font-family: Arial,Helvetica,sans-serif;
+  font-family: Arial,Helvetica,sans-serif;
 }
 
 .btn-navbar { /* to expand menu button when window is reduced */
@@ -46,8 +46,8 @@ header.module-content {
   padding: 0 !important;
 }
 .masthead .header-image a.title {
-  display: inline-block;
-  font-weight: bold;
+	display: inline-block;
+	font-weight: bold;
   color: #eee;
   font-size: 1rem;
   position: absolute;
@@ -58,13 +58,13 @@ header.module-content {
   text-decoration: none;
 }
 .masthead .header-image a.logo {
+  float: left;
   position: relative;
   top: 8px;
   width: 60px;
   height: 60px;
-  float: left;
-  background-image: url('/bart-header-logo.png');
   background-size: 60px;
+  background-image: url('/bart-header-logo.png');
   background-repeat: no-repeat;
 }
 .masthead .navigation {
@@ -73,6 +73,9 @@ header.module-content {
 }
 .masthead .navigation a {
   color: #ddd !important;
+}
+.masthead .navigation a:hover {
+  color: #eee !important;
 }
 .masthead .nav-collapse {
   padding-top: 5px;
@@ -111,35 +114,6 @@ header.module-content {
   background-color: #206b82 !important;
 }
 
-.site-footer-container {
-  margin: 0 auto;
-}
-
-.site-footer {
-  color: #eee;
-  height: auto;
-  padding: 1rem 0;
-  min-height: auto;
-  font-size: 12.8px;
-  font-weight: normal;
-  background-color: #0f3658;
-  overflow: hidden;
-}
-.site-footer .attribution { /* no space between <hr> tags */
-  margin: 0;
-}
-.site-footer .agency-name {
-  color: #eee;
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-.site-footer .other-links a {
-  padding-right: 2rem;
-}
-.site-footer .other-links a:last-child {
-  padding-right: 0;
-}
-
 /* Home page */
 
 .homepage [role="main"] {
@@ -147,7 +121,7 @@ header.module-content {
   background-color: #fff !important;
 }
 
-.intro-text {
+/* .intro-text {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.5rem;
@@ -155,18 +129,18 @@ header.module-content {
   color: #fff;
   background-color: #0b3d64;
   font-style: italic;
-}
+} */
 
 .homepage-banner {
-  height: 335px;
+  height: 330px;
   background-size: cover;
-  background-position: left center;
+  background-position: center center;
   background-image: url('/bart_banner.jpg');
 }
 
 .homepage-banner-overlay {
   position: absolute;
-  top: 158px;
+  top: 155px;
   width: 100%;
 }
 .homepage-banner-overlay .inner {
@@ -198,13 +172,13 @@ header.module-content {
 
 /* Topics */
 
-.topics {
+.homepage .topics {
   background-color: #fff;
   margin: 0 auto;
   padding-top: 1rem !important;
   padding-bottom: 0 !important;
 }
-.topic {
+.homepage .topic {
   position: relative; /* so we can make z-index: 1 when hovering over another topic */
   display: inline-block;
   margin-right: 13px;
@@ -217,24 +191,24 @@ header.module-content {
   background-color: #0196cd;
   font-size: 12.8px;
 }
-.topic-container {
+.homepage .topic-container {
   z-index: 999; /* so that arrow is under the box */
   padding: 10px 4px;
   position: relative;
   background-color: inherit;
 }
-.topic-title {
+.homepage .topic-title { /* applies to topic icons */
   margin-top: 5px;
   text-align: center;
 }
-h1.topics-header { /* applies to "Data Topics" */
+.homepage h1.topics-header { /* applies to "Data Topics" */
   font-weight: bold;
   text-align: left;
   font-size: 2rem;
   margin: 0;
   padding: 0.75rem 0 1rem 0;
 }
-.topic img {
+.homepage .topic img {
   max-height: 50px;
 }
 .behind-other-topics {
@@ -274,7 +248,7 @@ h1.topics-header { /* applies to "Data Topics" */
   border-right: 71px solid #0196cd;
   z-index: 999;
 }
-.dataset-menu-container > div:nth-child(1) { /* target only first menu item column */
+.dataset-menu-container > div:nth-of-type(1) { /* target only first menu item column */
   padding-left: 0.9rem;
 }
 .dataset-menu-container ul {
@@ -321,11 +295,11 @@ h1.topics-header { /* applies to "Data Topics" */
   opacity: 0.6;
 }
 
-/* featured section on homepage */
+
+/* Featured section */
 
 .featured-wrapper {
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin: 30px 0;
   padding: 30px 0;
   background-color: #0f3658;
 }
@@ -352,13 +326,67 @@ h1.topics-header { /* applies to "Data Topics" */
 .featured .image a {
   margin: 0;
 }
+.site-footer-container {
+  margin: 0 auto;
+}
+.site-footer {
+  overflow: hidden;
+  color: #eee;
+  height: auto;
+  padding: 1rem 0;
+  min-height: auto;
+  font-size: 12.8px;
+  font-weight: normal;
+  background-color: #0f3658;
+}
+.site-footer .attribution { /* no space between <hr> tags */
+  margin: 0;
+}
+.site-footer .agency-name {
+  color: #eee;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.site-footer .other-links a {
+  padding-right: 2rem;
+}
+.site-footer .other-links a:last-child {
+  padding-right: 0;
+}
+
+.site-footer-container {
+  margin: 0 auto;
+}
+
+.site-footer {
+  color: #eee;
+  height: auto;
+  padding: 1rem 0;
+  min-height: auto;
+  font-size: 12.8px;
+  font-weight: normal;
+  background-color: #0f3658;
+  overflow: hidden;
+}
+.site-footer .attribution { /* no space between <hr> tags */
+  margin: 0;
+}
+.site-footer .agency-name {
+  color: #eee;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.site-footer .other-links a {
+  padding-right: 2rem;
+}
+.site-footer .other-links a:last-child {
+  padding-right: 0;
+}
 
 /* Topics list page */
 
 .media-item .media-image {
-  max-height: 52px; /* to max home page */
-  background-color: #0196cd;
-  padding: 5px;
+  max-height: 50px;
 }
 
 .media-item .media-heading, .media-item .count {
@@ -389,8 +417,6 @@ h1.topics-header { /* applies to "Data Topics" */
   }
 }
 
-/* Media Breakpoints */
-
 @media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
   /* container width: 724px */
   .adjusted-content-size {
@@ -410,18 +436,21 @@ h1.topics-header { /* applies to "Data Topics" */
     left: 5.25rem;
   }
   .homepage-banner {
-    height: 200px;
+    height: 230px;
   }
   .homepage-banner-overlay {
-    top: 90px;
+    top: 110px;
+  }
+  .homepage-banner {
+    background-position: center center;
   }
   .homepage-banner-overlay .content {
-    height: 70px;
+    height: 80px;
   }
   .homepage-banner-overlay .content h1.narrow {
     display: none;
   }
-  .homepage-banner-overlay .content h1.wide { /* for smaller screens */
+  .homepage-banner-overlay .content h1.wide {
     display: block;
   }
   .homepage-banner-overlay .content p {
@@ -445,6 +474,12 @@ h1.topics-header { /* applies to "Data Topics" */
   .masthead .section {
     float: left;
     padding-right: 2rem;
+  }
+  .masthead .header-image a.logo {
+    left: 2rem;
+  }
+  .masthead .header-image a.title {
+    left: 6.25rem;
   }
   .masthead .site-search {
     display: block;
@@ -473,17 +508,14 @@ h1.topics-header { /* applies to "Data Topics" */
 }
 
 @media (max-width: 610px) {
-  .masthead .header-image a.logo {
-    left: 2rem;
-  }
-  .masthead .header-image a.title {
-    left: 6.25rem;
-  }
   .masthead .site-search {
     display: none;
   }
   .homepage-banner {
     height: 100px;
+  }
+  .homepage-banner-overlay {
+    display: none;
   }
   .featured {
     width: 100%;
