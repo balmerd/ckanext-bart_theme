@@ -384,7 +384,7 @@ h1.topics-header { /* applies to "Data Topics" */
 
 @media (min-width: 980px) { /* bootstrap media breakpoint (6 topics per row) */
   /* container width: 940px */
-  .topics, .featured, .site-footer-container {
+  .adjusted-content-size {
     width: 788px;
   }
 }
