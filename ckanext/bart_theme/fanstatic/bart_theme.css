@@ -110,14 +110,6 @@ header.module-content {
   color: #fff !important;
   background-color: #206b82 !important;
 }
-/* left align with topic icons, on smaller screens show just header on one line */
-/* less space below topic icons*/
-.homepage-banner {
-  height: 335px;
-  background-size: cover;
-  background-position: left center;
-  background-image: url('/bart_banner.jpg');
-}
 
 .site-footer-container {
   margin: 0 auto;
@@ -165,15 +157,22 @@ header.module-content {
   font-style: italic;
 }
 
+.homepage-banner {
+  height: 335px;
+  background-size: cover;
+  background-position: left center;
+  background-image: url('/bart_banner.jpg');
+}
+
 .homepage-banner-overlay {
   position: absolute;
   top: 158px;
   width: 100%;
 }
-.homepage-banner-overlay-container {
+.homepage-banner-overlay .inner {
   margin: 0 auto; /* to align with .topics etc.. */
 }
-.homepage-banner-content {
+.homepage-banner-overlay .content {
   z-index: 999;
   width: 540px;
   padding: 15px 20px;
@@ -182,17 +181,17 @@ header.module-content {
   background-color: #0f3658;
   opacity: 0.9;
 }
-.homepage-banner-content h1 {
+.homepage-banner-overlay .content h1 {
   margin-top: 0;
   line-height: 1.2;
 }
-.homepage-banner-content h1.narrow {
+.homepage-banner-overlay .content h1.narrow {
   display: block;
 }
-.homepage-banner-content h1.wide { /* for smaller screens */
+.homepage-banner-overlay .content h1.wide { /* for smaller screens */
   display: none;
 }
-.homepage-banner-content p {
+.homepage-banner-overlay .content p {
   padding: 0;
   margin: 0
 }
@@ -390,10 +389,13 @@ h1.topics-header { /* applies to "Data Topics" */
   }
 }
 
-/* breakpoints */
+/* Media Breakpoints */
 
 @media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
   /* container width: 724px */
+  .adjusted-content-size {
+    width: 656px;
+  }
   .masthead .section {
     padding-right: 1rem;
     float: left;
@@ -413,20 +415,17 @@ h1.topics-header { /* applies to "Data Topics" */
   .homepage-banner-overlay {
     top: 90px;
   }
-  .homepage-banner-content {
+  .homepage-banner-overlay .content {
     height: 70px;
   }
-  .homepage-banner-content h1.narrow {
+  .homepage-banner-overlay .content h1.narrow {
     display: none;
   }
-  .homepage-banner-content h1.wide { /* for smaller screens */
+  .homepage-banner-overlay .content h1.wide { /* for smaller screens */
     display: block;
   }
-  .homepage-banner-content p {
+  .homepage-banner-overlay .content p {
     display: none;
-  }
-  .topics, .featured, .site-footer-container {
-    width: 656px;
   }
   .site-footer .other-links a {
     padding-right: 2px;
@@ -439,6 +438,9 @@ h1.topics-header { /* applies to "Data Topics" */
     /* bootstrap override */
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+  .adjusted-content-size {
+    width: 524px;
   }
   .masthead .section {
     float: left;
@@ -453,20 +455,17 @@ h1.topics-header { /* applies to "Data Topics" */
   .homepage-banner-overlay {
     top: 66px;
   }
-  .homepage-banner-content {
+  .homepage-banner-overlay .content {
     height: 47px;
   }
-  .homepage-banner-content h1.narrow {
+  .homepage-banner-overlay .content h1.narrow {
     display: none;
   }
-  .homepage-banner-content h1.wide { /* for smaller screens */
+  .homepage-banner-overlay .content h1.wide { /* for smaller screens */
     display: block;
   }
-  .homepage-banner-content p {
+  .homepage-banner-overlay .content p {
     display: none;
-  }
-  .topics, .featured, .site-footer-container {
-    width: 524px;
   }
   .featured .image {
     top: 0;
