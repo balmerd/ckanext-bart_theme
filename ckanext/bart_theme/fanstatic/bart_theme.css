@@ -34,7 +34,7 @@ header.module-content {
   background-color: #0196cd;
 }
 
-.masthead { /* redesigned */
+.masthead {
   height: 60px;
   min-height: 60px;
   background-color: #2a2919;
@@ -45,7 +45,7 @@ header.module-content {
 .masthead .container {
   padding: 0 !important;
 }
-.masthead .header-image a.title { /* redesigned */
+.masthead .header-image a.title {
   display: inline-block;
   font-weight: bold;
   color: #eee;
@@ -57,7 +57,7 @@ header.module-content {
 .masthead .header-image a:hover {
   text-decoration: none;
 }
-.masthead .header-image a.logo { /* redesigned */
+.masthead .header-image a.logo {
   position: relative;
   top: 8px;
   width: 60px;
@@ -67,25 +67,31 @@ header.module-content {
   background-size: 60px;
   background-repeat: no-repeat;
 }
-.masthead .navigation { /* added */
+.masthead .navigation {
   position: relative;
   bottom: -28px;
 }
-.masthead .navigation a { /* redesigned */
+.masthead .navigation a {
   color: #ddd !important;
 }
 .masthead .nav-collapse {
   padding-top: 5px;
 }
-.masthead .site-search { /* redesigned */
+
+#field-sitewide-search {
+  font-size: 0.8rem;
+  border-radius: 15px;
+}
+
+.masthead .site-search {
   margin-top: 4px;
   position: relative;
   bottom: -15px;
 }
-.masthead .site-search input { /* added */
+.masthead .site-search input {
   background-color: #ddd;
 }
-.masthead .site-search input:hover { /* added */
+.masthead .site-search input:hover {
   background-color: #eee;
 }
 .masthead .container {
@@ -104,7 +110,8 @@ header.module-content {
   color: #fff !important;
   background-color: #206b82 !important;
 }
-
+/* left align with topic icons, on smaller screens show just header on one line */
+/* less space below topic icons*/
 .homepage-banner {
   height: 335px;
   background-size: cover;
@@ -112,11 +119,11 @@ header.module-content {
   background-image: url('/bart_banner.jpg');
 }
 
-.site-footer-container { /* added */
+.site-footer-container {
   margin: 0 auto;
 }
 
-.site-footer { /* redesigned */
+.site-footer {
   color: #eee;
   height: auto;
   padding: 1rem 0;
@@ -129,21 +136,16 @@ header.module-content {
 .site-footer .attribution { /* no space between <hr> tags */
   margin: 0;
 }
-.site-footer .agency-name { /* added */
+.site-footer .agency-name {
   color: #eee;
   font-weight: bold;
   font-size: 1.25rem;
 }
-.site-footer .other-links a { /* added */
+.site-footer .other-links a {
   padding-right: 2rem;
 }
-.site-footer .other-links a:last-child { /* added */
+.site-footer .other-links a:last-child {
   padding-right: 0;
-}
-
-#field-sitewide-search {
-  font-size: 0.8rem;
-  border-radius: 15px;
 }
 
 /* Home page */
@@ -163,31 +165,47 @@ header.module-content {
   font-style: italic;
 }
 
-.home-banner-text { /* added */
+.homepage-banner-overlay {
   position: absolute;
-  top: 75px;
+  top: 158px;
   width: 100%;
 }
-.home-banner-content { /* added */
+.homepage-banner-overlay-container {
+  margin: 0 auto; /* to align with .topics etc.. */
+}
+.homepage-banner-content {
   z-index: 999;
-  width: 440px;
-  padding: 20px;
-  margin: 0 auto;
+  width: 540px;
+  padding: 15px 20px;
   font-size: 12.8px;
   color: #eee;
   background-color: #0f3658;
   opacity: 0.9;
 }
+.homepage-banner-content h1 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+.homepage-banner-content h1.narrow {
+  display: block;
+}
+.homepage-banner-content h1.wide { /* for smaller screens */
+  display: none;
+}
+.homepage-banner-content p {
+  padding: 0;
+  margin: 0
+}
 
 /* Topics */
 
-.topics { /* redesigned */
+.topics {
   background-color: #fff;
   margin: 0 auto;
   padding-top: 1rem !important;
   padding-bottom: 0 !important;
 }
-.topic { /* redesigned */
+.topic {
   position: relative; /* so we can make z-index: 1 when hovering over another topic */
   display: inline-block;
   margin-right: 13px;
@@ -208,7 +226,6 @@ header.module-content {
 }
 .topic-title {
   margin-top: 5px;
-  font-weight: bold;
   text-align: center;
 }
 h1.topics-header { /* applies to "Data Topics" */
@@ -216,7 +233,7 @@ h1.topics-header { /* applies to "Data Topics" */
   text-align: left;
   font-size: 2rem;
   margin: 0;
-  padding: 0.75rem 0 1rem 0; /* left was 5rem; */
+  padding: 0.75rem 0 1rem 0;
 }
 .topic img {
   max-height: 50px;
@@ -309,7 +326,7 @@ h1.topics-header { /* applies to "Data Topics" */
 
 .featured-wrapper {
   margin-top: 80px;
-   margin-bottom: 125px;
+  margin-bottom: 50px;
   padding: 30px 0;
   background-color: #0f3658;
 }
@@ -364,12 +381,17 @@ h1.topics-header { /* applies to "Data Topics" */
   list-style: none;
 }
 
+/* Media Breakpoints */
+
 @media (min-width: 980px) { /* bootstrap media breakpoint (6 topics per row) */
   /* container width: 940px */
   .topics, .featured, .site-footer-container {
     width: 788px;
   }
 }
+
+/* breakpoints */
+
 @media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
   /* container width: 724px */
   .masthead .section {
@@ -385,11 +407,23 @@ h1.topics-header { /* applies to "Data Topics" */
   .masthead .header-image a.title {
     left: 5.25rem;
   }
-  .home-banner-text {
-    top: 50px;
-  }
   .homepage-banner {
     height: 200px;
+  }
+  .homepage-banner-overlay {
+    top: 90px;
+  }
+  .homepage-banner-content {
+    height: 70px;
+  }
+  .homepage-banner-content h1.narrow {
+    display: none;
+  }
+  .homepage-banner-content h1.wide { /* for smaller screens */
+    display: block;
+  }
+  .homepage-banner-content p {
+    display: none;
   }
   .topics, .featured, .site-footer-container {
     width: 656px;
@@ -398,6 +432,7 @@ h1.topics-header { /* applies to "Data Topics" */
     padding-right: 2px;
   }
 }
+
 @media (max-width: 767px) { /* bootstrap media breakpoint (4 topics per row) */
   /* container width: auto; */
   body {
@@ -415,6 +450,21 @@ h1.topics-header { /* applies to "Data Topics" */
   .homepage-banner {
     height: 150px;
   }
+  .homepage-banner-overlay {
+    top: 66px;
+  }
+  .homepage-banner-content {
+    height: 47px;
+  }
+  .homepage-banner-content h1.narrow {
+    display: none;
+  }
+  .homepage-banner-content h1.wide { /* for smaller screens */
+    display: block;
+  }
+  .homepage-banner-content p {
+    display: none;
+  }
   .topics, .featured, .site-footer-container {
     width: 524px;
   }
@@ -422,6 +472,7 @@ h1.topics-header { /* applies to "Data Topics" */
     top: 0;
   }
 }
+
 @media (max-width: 610px) {
   .masthead .header-image a.logo {
     left: 2rem;
