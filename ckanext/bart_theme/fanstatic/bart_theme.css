@@ -181,21 +181,13 @@ header.module-content {
 
 /* Topics */
 
-.homepage .topics { /* redesigned */
+.topics { /* redesigned */
   background-color: #fff;
-  padding-top: 1rem !important;
   margin: 0 auto;
+  padding-top: 1rem !important;
   padding-bottom: 0 !important;
 }
-/* .homepage .topics .row-fluid {
-  display: table;
-  width: auto;
-  margin: 0 auto;
-} */
-/* .homepage .topics-wrapper {
-  padding-left: 5rem; /* assumes 940px width */
-} */
-.homepage .topic { /* redesigned */
+.topic { /* redesigned */
   position: relative; /* so we can make z-index: 1 when hovering over another topic */
   display: inline-block;
   margin-right: 13px;
@@ -208,30 +200,25 @@ header.module-content {
   background-color: #0196cd;
   font-size: 12.8px;
 }
-.homepage .topic-container {
+.topic-container {
   z-index: 999; /* so that arrow is under the box */
   padding: 10px 4px;
   position: relative;
   background-color: inherit;
 }
-.homepage .topic-title {
+.topic-title {
   margin-top: 5px;
   font-weight: bold;
   text-align: center;
 }
-/* .homepage .topic-title {
-  margin-top: 5px;
-  font-weight: bold;
-  text-align: center;
-} */
-.homepage h1.topics-header { /* applies to "Data Topics" */
+h1.topics-header { /* applies to "Data Topics" */
   font-weight: bold;
   text-align: left;
   font-size: 2rem;
   margin: 0;
   padding: 0.75rem 0 1rem 0; /* left was 5rem; */
 }
-.homepage .topic img {
+.topic img {
   max-height: 50px;
 }
 .behind-other-topics {
