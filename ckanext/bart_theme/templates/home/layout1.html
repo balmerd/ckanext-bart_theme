@@ -1,39 +1,47 @@
 <div role="main">
-  <div class="intro-text">
-    <div id="content" class="container">
-      <h1>The home of the BART’s open data</h1>
-      <p>Here you will find data, tools, and resources to conduct research,<br>develop web and mobile applications, design data visualizations, and more.</p>
+  <div class="home-banner-text">
+    <div class="home-banner-content">
+      <h1>Your Source for <br>BART Open Data</h1>
+      As part of our ongoing commitment to transparency accountability and citizen
+      engagement, the San Francisco Bay Area Rapid Transit District (BART) has redesigned
+      this Open Data Portal for you to explore, visualize, download and build new things with BART public data.
     </div>
   </div>
-  <div class="container topics">
-    <h1 class="topic-title">Data Topics</h1>
-    <div class="topics-wrapper">
-      {% for group in h.bart_theme_all_groups() %}
-        {% set type = group.type or 'group' %}
-        {% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
-        {% set title = h.get_translated(group, 'title') or group.display_name %}
-        {% set titleHtml = title.replace(" ", "<br>") | safe %}
-        {% set datasets = h.bart_theme_get_json(group['datasets']) %}
-        <div class="topic" data-datasets="{{ datasets }}">
-          <div class="topic-container">
-            <img data-url="{{ url }}" src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}">
-            <div class="topic-title">{{ titleHtml }}</div>
+  <div class="homepage-banner">
+    <!-- train image here -->
+  </div>
+  <div class="container">
+    <div class="topics">
+      <h1 class="topics-header">Data Topics</h1>
+      <div class="topic-wrapper">
+        {% for group in h.bart_theme_all_groups() %}
+          {% set type = group.type or 'group' %}
+          {% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
+          {% set title = h.get_translated(group, 'title') or group.display_name %}
+          {% set titleHtml = title.replace(" ", "<br>") | safe %}
+          {% set datasets = h.bart_theme_get_json(group['datasets']) %}
+          <div class="topic" data-datasets="{{ datasets }}">
+            <div class="topic-container">
+              <img data-url="{{ url }}" src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}">
+              <div class="topic-title">{{ titleHtml }}</div>
+            </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </div>
-  <div class="features">
+  <div class="featured-wrapper">
     <div class="container">
-      <div class="row">
-        <h1 class="features-title">How We're Doing</h1>
-      </div>
-      <div class="row feature">
-        <div class="span9 text">
-          <div class="feature-title"><a href="http://qa.bart.gov/kpi">Key Performance Indicators</a></div>
-          <p>BART tracks hundreds of performance measures at all levels of the organization. The most important measures, are organized according to eight Strategic Plan Goals. The percentage of satisfied customers with BART has dropped recently due to reliability problems, crowding, and other issues. Similarly, on-time performance has fallen recently due to aging infrastructure, new safety rules, and increased ridership. There are multiple initiatives such as planned system investments, including new train cars, escalator/elevator overhauls, and implementation of Measure RR projects should help to improve customer service over time. <a href="http://qa.bart.gov/kpi" aria-label="Key Performance Indicators">Click here</a>, to learn more on the eight Strategic Plan Goals.</p>
+      <div class="featured">
+        <h1 class="featured-header">Key Performance Indicators</h1>
+        <div class="pull-left text">
+          BART tracks hundreds of performance measures at all levels of the organization. The most important measures, are organized into eight Strategic Plan Goals. The percentage of satisfied customers with BART has dropped recently due to reliability problems,
+          crowding, and other issues. Similarly, on-time performance has fallen recently due to an aging infrastructure, new safety rules, and increased ridership. There are multiple initiatives such as planned system investments, including new
+          train cars, escalator/elevator overhauls, and implementation of Measure RR projects should help to improve customer service over time. Click here, to learn more on the eight Strategic Plan Goals.
         </div>
-        <a class="span2 image" href="http://qa.bart.gov/kpi" title="http://qa.bart.gov/kpi" aria-label="Key Performance Indicators"></a>
+        <div class="pull-right image">
+          <a  href="http://qa.bart.gov/kpi" title="http://qa.bart.gov/kpi"><img src="/kpi-icon.png"></a>
+        </div>
       </div>
     </div>
   </div>

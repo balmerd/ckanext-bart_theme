@@ -74,11 +74,11 @@
     {% endif %}
   {% endblock %}
   <div class="container">
-    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button" aria-label="menu toggle">
+    <!-- <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button" aria-label="menu toggle">
       <span class="fa-bar"></span>
       <span class="fa-bar"></span>
       <span class="fa-bar"></span>
-    </button>
+    </button> -->
     {# The .header-image class hides the main text and uses image replacement for the title #}
     <hgroup class="{{ g.header_class }} pull-left">
 
@@ -91,11 +91,20 @@
 
     </hgroup>
 
-    <div class="nav-collapse collapse">
+    <div class="pull-right">
 
       {% block header_site_navigation %}
         <nav class="section navigation">
-          <ul class="nav nav-pills">
+          <span class="top-level-nav">
+              <a href="/dataset">Datasets</a>
+              &nbsp;
+              <a href="/group">Topics</a>
+              &nbsp;
+              <a href="{% url_for controller='package', action='search' %}">test Datasets</a>
+              &nbsp;
+              <a href="{% url_for controller='package', action='group_index' %}">test Topics</a>
+          </span>
+          <ul class="nav nav-pills hidden"><!-- removed -->
             {% block header_site_navigation_tabs %}
               {{ h.build_nav_main(
                 ('search', _('Datasets')),

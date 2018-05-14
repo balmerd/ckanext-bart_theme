@@ -1,3 +1,8 @@
+/*
+#0196cd - topic icon background
+#0f3658 - dark blue background
+#eee    - text on both
+*/
 body, [role="main"], .main {
   color: #1e1e1e;
   background-image: none;
@@ -29,11 +34,10 @@ header.module-content {
   background-color: #0196cd;
 }
 
-.masthead {
-  height: 3rem;
-  min-height: 3rem;
-  background-color: #eee;
-  border-bottom: 1px solid #aaa;
+.masthead { /* redesigned */
+  height: 60px;
+  min-height: 60px;
+  background-color: #2a2919;
 }
 .masthead .debug { /* hide controller and action names */
   display: none;
@@ -41,34 +45,48 @@ header.module-content {
 .masthead .container {
   padding: 0 !important;
 }
-.masthead .header-image a.title {
-	display: inline-block;
-	margin-top: 14px;
-  color: #1e1e1e;
-	font-weight: bold;
-	font-size: 1.25rem;
+.masthead .header-image a.title { /* redesigned */
+  display: inline-block;
+  font-weight: bold;
+  color: #eee;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 6px;
+  left: 4.25rem;
 }
 .masthead .header-image a:hover {
   text-decoration: none;
 }
-.masthead .header-image a.logo {
+.masthead .header-image a.logo { /* redesigned */
   position: relative;
-  top: 3px;
+  top: 8px;
+  width: 60px;
+  height: 60px;
   float: left;
-  width: 70px;
-  height: 42px;
   background-image: url('/bart-header-logo.png');
   background-size: 60px;
   background-repeat: no-repeat;
 }
-.masthead .navigation a {
-  color: #1e1e1e !important;
+.masthead .navigation { /* added */
+  position: relative;
+  bottom: -28px;
+}
+.masthead .navigation a { /* redesigned */
+  color: #ddd !important;
 }
 .masthead .nav-collapse {
   padding-top: 5px;
 }
-.masthead .site-search {
+.masthead .site-search { /* redesigned */
   margin-top: 4px;
+  position: relative;
+  bottom: -15px;
+}
+.masthead .site-search input { /* added */
+  background-color: #ddd;
+}
+.masthead .site-search input:hover { /* added */
+  background-color: #eee;
 }
 .masthead .container {
   padding: 0.5rem 0;
@@ -87,23 +105,40 @@ header.module-content {
   background-color: #206b82 !important;
 }
 
-.site-footer {
-  font-size: 0.8rem;
-  font-weight: bold;
-  background-color: #126388; /* complement to intro-text */
-  /* for sticky footer */
-  height: 3em;
-  overflow: hidden;
-  padding: 10px 0;
+.homepage-banner {
+  height: 335px;
+  background-size: cover;
+  background-position: left center;
+  background-image: url('/bart_banner.jpg');
 }
-.site-footer div.hr {
-  clear: both;
-  margin: 0 0 5px;
-  height: 5px;
-  border-bottom: 1px solid #fafafa;
+
+.site-footer-container { /* added */
+  margin: 0 auto;
+}
+
+.site-footer { /* redesigned */
+  color: #eee;
+  height: auto;
+  padding: 1rem 0;
+  min-height: auto;
+  font-size: 12.8px;
+  font-weight: normal;
+  background-color: #0f3658;
+  overflow: hidden;
 }
 .site-footer .attribution { /* no space between <hr> tags */
   margin: 0;
+}
+.site-footer .agency-name { /* added */
+  color: #eee;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.site-footer .other-links a { /* added */
+  padding-right: 2rem;
+}
+.site-footer .other-links a:last-child { /* added */
+  padding-right: 0;
 }
 
 #field-sitewide-search {
@@ -128,33 +163,50 @@ header.module-content {
   font-style: italic;
 }
 
+.home-banner-text { /* added */
+  position: absolute;
+  top: 75px;
+  width: 100%;
+}
+.home-banner-content { /* added */
+  z-index: 999;
+  width: 440px;
+  padding: 20px;
+  margin: 0 auto;
+  font-size: 12.8px;
+  color: #eee;
+  background-color: #0f3658;
+  opacity: 0.9;
+}
+
 /* Topics */
 
-.homepage .topics {
+.homepage .topics { /* redesigned */
   background-color: #fff;
   padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
+  margin: 0 auto;
+  padding-bottom: 0 !important;
 }
-.homepage .topics .row-fluid {
+/* .homepage .topics .row-fluid {
   display: table;
   width: auto;
   margin: 0 auto;
-}
-.homepage .topics-wrapper {
+} */
+/* .homepage .topics-wrapper {
   padding-left: 5rem; /* assumes 940px width */
-}
-.homepage .topic {
+} */
+.homepage .topic { /* redesigned */
   position: relative; /* so we can make z-index: 1 when hovering over another topic */
   display: inline-block;
-  margin-right: 0.75rem;
+  margin-right: 13px;
   width: 115px;
   height: 6rem;
   cursor: pointer;
   text-align: center;
   margin-bottom: 1rem;
-  color: #fff;
+  color: #eee;
   background-color: #0196cd;
-  font-size: 0.8rem;
+  font-size: 12.8px;
 }
 .homepage .topic-container {
   z-index: 999; /* so that arrow is under the box */
@@ -167,10 +219,17 @@ header.module-content {
   font-weight: bold;
   text-align: center;
 }
-.homepage .topic-title {
+/* .homepage .topic-title {
   margin-top: 5px;
   font-weight: bold;
   text-align: center;
+} */
+.homepage h1.topics-header { /* applies to "Data Topics" */
+  font-weight: bold;
+  text-align: left;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0.75rem 0 1rem 0; /* left was 5rem; */
 }
 .homepage .topic img {
   max-height: 50px;
@@ -259,39 +318,44 @@ header.module-content {
   opacity: 0.6;
 }
 
-/* Features */
+/* Features (redesigned) */
 
+.features {
+  background-color: #0f3658;
+  padding: 20px 0 30px 0;
+}
 .features-title {
   margin-top: 5px;
   font-weight: bold;
   text-align: center;
   margin: 1rem 0;
+  color: #eee;
+  text-align: left;
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+.features-icon {
+  position: relative;
+  top: -20px;
 }
 .feature {
-  min-height: 11rem;
-  max-height: 11rem;
+  color: #eee;
+  position: relative;
 }
 .feature .text {
-  padding: 1rem;
-  background-color: #fff;
-  min-height: inherit;
-  max-height: inherit;
-}
-.feature .feature-title {
-  font-weight: bold;
-  font-size: 1rem;
-}
-.feature .text p {
-  padding-top: 0.5rem;
+  margin-left: 0;
+  font-size: 12.8px;
+  width: 68%;
 }
 .feature .image {
-  padding: 1rem;
-  background-color: #fff;
-  background-size: 100% !important;
-  background-repeat: no-repeat;
-  background-image: url('/kpi-icon.jpg');
-  min-height: inherit;
-  max-height: inherit;
+  width: 20%;
+  margin-left: 20px;
+  position: relative;
+  top: -30px;
+}
+.feature .image a {
+  margin: 0;
 }
 
 /* Topics list page */
@@ -319,4 +383,87 @@ header.module-content {
   margin-left: 0; /* my mod */
   padding-left: 0;
   list-style: none;
+}
+
+@media (min-width: 980px) { /* bootstrap media breakpoint (6 topics per row) */
+  /* container width: 940px */
+  .topics, .featured, .site-footer-container {
+    width: 788px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
+  /* container width: 724px */
+  .masthead .section {
+    padding-right: 1rem;
+    float: left;
+  }
+  .masthead .site-search {
+    display: block;
+  }
+  .masthead .header-image a.logo {
+    left: 1rem;
+  }
+  .masthead .header-image a.title {
+    left: 5.25rem;
+  }
+  .home-banner-text {
+    top: 50px;
+  }
+  .homepage-banner {
+    height: 200px;
+  }
+  .topics, .featured, .site-footer-container {
+    width: 656px;
+  }
+  .site-footer .other-links a {
+    padding-right: 2px;
+  }
+}
+@media (max-width: 767px) { /* bootstrap media breakpoint (4 topics per row) */
+  /* container width: auto; */
+  body {
+    /* bootstrap override */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .masthead .section {
+    float: left;
+    padding-right: 2rem;
+  }
+  .masthead .site-search {
+    display: block;
+  }
+  .homepage-banner {
+    height: 150px;
+  }
+  .topics, .featured, .site-footer-container {
+    width: 524px;
+  }
+  .featured .image {
+    top: 0;
+  }
+}
+@media (max-width: 610px) {
+  .masthead .header-image a.logo {
+    left: 2rem;
+  }
+  .masthead .header-image a.title {
+    left: 6.25rem;
+  }
+  .masthead .site-search {
+    display: none;
+  }
+  .homepage-banner {
+    height: 100px;
+  }
+  .featured {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .featured .text {
+    width: 98%;
+  }
+  .featured .image {
+    display: none;
+  }
 }
