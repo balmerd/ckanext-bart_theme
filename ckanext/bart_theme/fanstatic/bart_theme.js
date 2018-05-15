@@ -4,17 +4,6 @@ $(document).ready(function() {
     window.location.href = $(this).data().url;
   });
 
-  // fade other menu items on hover
-
-  function menuItemMouseover() {
-    $('.dataset-menu-item').addClass('unfocused');
-    $(this).removeClass('unfocused');
-  }
-
-  function menuItemMouseout() {
-    $('.dataset-menu-item').removeClass('unfocused');
-  }
-
   // show dataset menu on hover
 
   function topicHoverIn() {
@@ -72,9 +61,14 @@ $(document).ready(function() {
   }
 
   $('.topic') // fade other menu items on hover
-    .on('mouseover', '.dataset-menu-item', $.debounce(250, menuItemMouseover))
-    .on('mouseout', '.dataset-menu-item', $.debounce(250, menuItemMouseout));
+    .on('mouseover', '.dataset-menu-item', function() {
+      $('.dataset-menu-item').addClass('unfocused');
+      $(this).removeClass('unfocused');
+    })
+    .on('mouseout', '.dataset-menu-item', function() {
+      $('.dataset-menu-item').removeClass('unfocused');
+    });
 
   // show dataset menu on hover
-  $('.topic').hover($.debounce(250, topicHoverIn), $.debounce(100, topicHoverOut));
+  $('.topic').hover($.debounce(250, topicHoverIn), topicHoverOut);
 });
