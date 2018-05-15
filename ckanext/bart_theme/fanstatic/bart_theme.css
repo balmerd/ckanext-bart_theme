@@ -325,7 +325,7 @@ header.module-content {
   min-height: auto;
   font-size: 12.8px;
   font-weight: normal;
-  background-color: #0f3658;
+  background-color: #2a2919 !important;
 }
 .site-footer .attribution { /* no space between <hr> tags */
   margin: 0;
