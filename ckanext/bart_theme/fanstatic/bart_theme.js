@@ -54,6 +54,11 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $('<div class="dataset-menu' + menuClass + '"><div class="dataset-menu-container" style="width:' + (11 * menu.length) + 'rem">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
+      setTimeout(function() {
+        $('.dataset-menu').on('click', 'li', function() {
+          window.location.href = $(this).data().url;
+        });
+      }, 10);
     }, 25);
   }, function() {
     $('.dataset-menu').remove();
