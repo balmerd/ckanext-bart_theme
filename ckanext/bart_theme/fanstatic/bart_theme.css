@@ -37,7 +37,7 @@ header.module-content {
 .masthead {
   height: 60px;
   min-height: 60px;
-  background-color: #2a2919;
+  background-color: black;
 }
 .masthead .debug { /* hide controller and action names */
   display: none;
@@ -325,7 +325,7 @@ header.module-content {
   min-height: auto;
   font-size: 12.8px;
   font-weight: normal;
-  background-color: #2a2919 !important;
+  background-color: black !important;
 }
 .site-footer .attribution { /* no space between <hr> tags */
   margin: 0;
