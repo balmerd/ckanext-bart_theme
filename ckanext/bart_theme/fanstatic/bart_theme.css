@@ -124,7 +124,7 @@ header.module-content {
 .homepage-banner {
   height: 327px; /* full size */
   xxx-height: 260px; /* for Satinder, so topic icons are above the fold */
-  background-size: 100%;
+  background-size: cover;
   background-position: top left;
   background-image: url('/bart_banner.png');
 }
