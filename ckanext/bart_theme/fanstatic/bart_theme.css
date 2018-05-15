@@ -178,7 +178,7 @@ header.module-content {
   cursor: pointer;
   text-align: center;
   margin-bottom: 1rem;
-  color: #eee;
+  color: #fff;
   background-color: #0196cd;
   font-size: 12.8px;
 }
@@ -251,7 +251,6 @@ header.module-content {
   border-top: 0;
   background-color: aliceblue;
   z-index: 2;
-  color: #fff;
   border-top: 1px solid #aaa;
   background-color: #0196cd;
   min-height: 140px;
