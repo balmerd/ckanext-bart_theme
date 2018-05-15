@@ -22,6 +22,7 @@ $(document).ready(function() {
     var position = this$.position();
     var datasets = this$.data().datasets;
 
+    var menuClass;
     var arrowWidth = 20;
     var isLastTopicInRow = true;
     var style = { top: -(arrowWidth + 2) }; // - width + 2 to fix arrow position
@@ -33,8 +34,10 @@ $(document).ready(function() {
     });
 
     if (isLastTopicInRow) {
+      menuClass = ' left-menu';
       style.right = width + arrowWidth;
     } else {
+      menuClass = '';
       style.left = width + arrowWidth;
     }
 
@@ -49,14 +52,9 @@ $(document).ready(function() {
 
     this$.addClass('active').siblings().addClass('behind-other-topics'); // all but "this"
 
-    if (this$.hasClass('last-one')) {
-      $('<div class="dataset-menu left-menu"><div class="dataset-menu-container">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
-    } else {
-      $('<div class="dataset-menu"><div class="dataset-menu-container">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
-    }
-
-    $('.dataset-menu .dataset-menu-container').css('width', (11 * menu.length) + 'rem'); // base size is 11 rem
-
+    setTimeout(function() {
+      $('<div class="dataset-menu' + menuClass + '"><div class="dataset-menu-container" style="width:' + (11 * menu.length) + 'rem">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
+    }, 25);
   }, function() {
     $('.dataset-menu').remove();
     $('.topic').removeClass('active behind-other-topics');

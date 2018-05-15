@@ -232,18 +232,10 @@ header.module-content {
   z-index: 999;
 }
 .dataset-menu.left-menu .dataset-menu-container:before { /* right arrow */
-  content: " ";
-  position: absolute;
-  top: 50%;
   left: 100%;
-  width: 0;
-	height: 0;
 	border: solid transparent;
-	border-color: transparent;
 	border-left-color: #0196cd;
 	border-width: 69px;
-  margin-top: 0;
-  z-index: 999;
 }
 .dataset-menu-container > div:nth-of-type(1) { /* target only first menu item column */
   padding-left: 0.9rem;
