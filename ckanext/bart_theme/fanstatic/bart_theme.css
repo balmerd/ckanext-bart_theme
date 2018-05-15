@@ -121,26 +121,17 @@ header.module-content {
   background-color: #fff !important;
 }
 
-/* .intro-text {
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  padding: 2rem;
-  color: #fff;
-  background-color: #0b3d64;
-  font-style: italic;
-} */
-
 .homepage-banner {
-  height: 330px;
-  background-size: cover;
-  background-position: center center;
-  background-image: url('/bart_banner.jpg');
+  height: 327px; /* full size */
+  xxx-height: 260px; /* for Satinder, so topic icons are above the fold */
+  background-size: 100%;
+  background-position: top left;
+  background-image: url('/bart_banner.png');
 }
 
 .homepage-banner-overlay {
   position: absolute;
-  top: 155px;
+  top: 135px;
   width: 100%;
 }
 .homepage-banner-overlay .inner {
@@ -183,7 +174,7 @@ header.module-content {
   display: inline-block;
   margin-right: 13px;
   width: 115px;
-  height: 6rem;
+  height: 96px;
   cursor: pointer;
   text-align: center;
   margin-bottom: 1rem;
@@ -216,8 +207,6 @@ header.module-content {
   z-index: 1 !important;
 }
 
-/* http://www.cssarrowplease.com/ */
-/* https://stackoverflow.com/questions/16180107/arrow-box-with-css */
 .dataset-menu-container {
   position: relative;
   height: auto;
@@ -226,27 +215,27 @@ header.module-content {
   z-index: 999;
   /* width set in bart_theme.js */
 }
-.dataset-menu-container:before {
+/* http://www.cssarrowplease.com/ */
+.dataset-menu-container:before { /* left arrow */
   content: " ";
+  /* pointer-events: none; */ /* including this will cause the menu to be hidden when we hover over the arrow */
   position: absolute;
-  top: -1px;
-  left: -142px;
+  top: 50%;
+  right: 100%;
   width: 0;
-  height: 0;
-  border: 71px solid transparent;
-  border-right: 71px solid #0196cd;
+	height: 0;
+	border: solid transparent;
+	border-color: transparent;
+	border-right-color: #0196cd;
+	border-width: 69px;
+	margin-top: 0;
   z-index: 999;
 }
-.dataset-menu-container:after {
-  content: " ";
-  position: absolute;
-  top: -1px;
-  left: -142px;
-  width: 0;
-  height: 0;
-  border: 71px solid transparent;
-  border-right: 71px solid #0196cd;
-  z-index: 999;
+.dataset-menu.left-menu .dataset-menu-container:before { /* right arrow */
+  left: 100%;
+	border: solid transparent;
+	border-left-color: #0196cd;
+	border-width: 69px;
 }
 .dataset-menu-container > div:nth-of-type(1) { /* target only first menu item column */
   padding-left: 0.9rem;
@@ -440,9 +429,6 @@ header.module-content {
   }
   .homepage-banner-overlay {
     top: 110px;
-  }
-  .homepage-banner {
-    background-position: center center;
   }
   .homepage-banner-overlay .content {
     height: 80px;
