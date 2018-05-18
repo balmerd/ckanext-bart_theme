@@ -307,7 +307,11 @@ header.module-content {
   width: 68%; /* so that words break closest to the pdf (but doesn't leave room for icon) */
 }
 .featured .text a {
+  margin-top: 1rem;
+}
+.featured .text a {
   color: #eee !important;
+  text-decoration: underline !important;
 }
 .featured .image {
   position: relative;
