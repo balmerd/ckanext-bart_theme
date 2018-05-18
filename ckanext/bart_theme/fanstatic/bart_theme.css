@@ -306,7 +306,7 @@ header.module-content {
   font-size: 12.8px; /* hardcoded */
   width: 68%; /* so that words break closest to the pdf (but doesn't leave room for icon) */
 }
-.featured .text a {
+.featured .text p {
   margin-top: 1rem;
 }
 .featured .text a {
