@@ -70,5 +70,5 @@ $(document).ready(function() {
     });
 
   // show dataset menu on hover
-  $('.topic').hover($.debounce(200, topicHoverIn), topicHoverOut);
+  $('.topic').hover($.debounce(250, topicHoverIn), topicHoverOut);
 });
