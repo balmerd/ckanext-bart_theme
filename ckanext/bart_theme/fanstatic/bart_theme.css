@@ -50,9 +50,12 @@ header.module-content {
 	font-weight: bold;
   color: #eee;
   font-size: 1rem;
-  position: absolute;
+  /* position: absolute;
   bottom: 6px;
-  left: 4.25rem;
+  left: 4.25rem; */
+  position: relative;
+  bottom: -28px;
+  left: 0.75rem;
 }
 .masthead .header-image a:hover {
   text-decoration: none;
@@ -89,7 +92,7 @@ header.module-content {
 .masthead .site-search {
   margin-top: 4px;
   position: relative;
-  bottom: -15px;
+  bottom: -20px;
 }
 .masthead .site-search input {
   background-color: #ddd;
@@ -429,7 +432,7 @@ header.module-content {
     left: 1rem;
   }
   .masthead .header-image a.title {
-    left: 5.25rem;
+    left: 2rem;
   }
   .homepage-banner {
     height: 230px;
@@ -472,7 +475,7 @@ header.module-content {
     left: 2rem;
   }
   .masthead .header-image a.title {
-    left: 6.25rem;
+    left: 3rem;
   }
   .masthead .site-search {
     display: block;

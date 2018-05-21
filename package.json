@@ -1,6 +1,19 @@
 {
-  "description": "usage: npm run lint",
+  "name": "ckanext-bart_theme",
+  "version": "2.0.0",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-rename": "^1.2.3"
+  },
   "scripts": {
     "lint": "jshint ."
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balmerd/ckanext-bart_theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/balmerd/ckanext-bart_theme#readme"
 }

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  // hide page heading on Terms of Use page
+  $('#terms-of-use').parent().parent().find('h1.page-heading').hide()
+
   // show topic page on click
   $('.topic img').click(function() {
     window.location.href = $(this).data().url;

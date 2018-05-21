@@ -4,21 +4,21 @@
   <div class="site-footer-container adjusted-content-size">
     <div class="row-fluid">
       <div class="pull-left">
-        <a class="agency-name" href="http://bart.gov/">BART</a>
+        <a href="https://www.bart.gov/">{{ h.bart_theme_copyright() | safe }}</a>
       </div>
-      <div class="pull-right" style="text-transform:uppercase;">
-        <a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a>
+      <div class="pull-right">
+        <a href="/about">About this Open Data Portal</a>
       </div>
     </div>
     <div class="row-fluid" style="margin-top:0.5rem;">
       <div class="pull-left">
-        {{ h.bart_theme_copyright() | safe }}
+        <a xxx-class="agency-name" href="https://www.bart.gov/">www.bart.gov</a>
       </div>
       <div class="pull-right other-links">
-        <a href="http://bart.gov/">Terms of Use</a>
-        <a href="http://www.bart.gov/siteinfo/privacy">Privacy Policy</a>
-        <a href="http://bart.gov/">Open Data Policy</a>
-        <a href="http://www.bart.gov/siteinfo/contact">Contact Us</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="https://www.bart.gov/siteinfo/privacy">Privacy Policy</a>
+        <a href="https://www.bart.gov/sites/default/files/docs/BART_OPEN_DATA_POLICY_FINAL.pdf">Open Data Policy</a>
+        <a href="/feedback?title=Contact Us">Contact Us</a>
       </div>
     </div>
   </div>
