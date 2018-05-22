@@ -406,8 +406,7 @@ header.module-content {
   padding-left: 0;
   list-style: none;
 }
-.letter-list li {
-  padding: 0;
+.letter-list ul {
   list-style: none;
 }
 
