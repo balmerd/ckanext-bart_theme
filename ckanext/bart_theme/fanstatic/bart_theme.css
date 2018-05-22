@@ -383,7 +383,7 @@ header.module-content {
 
 /* Topics list page */
 
-.media-grid.topics {
+.media-grid.topics li {
   color: #eee;
   background-color: #0196cd;
 }
