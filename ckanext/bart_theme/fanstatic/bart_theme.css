@@ -406,6 +406,10 @@ header.module-content {
   padding-left: 0;
   list-style: none;
 }
+.letter-list li {
+  padding: 0;
+  list-style: none;
+}
 
 /* Media Breakpoints */
 
