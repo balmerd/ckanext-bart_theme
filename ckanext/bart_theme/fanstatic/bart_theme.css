@@ -383,9 +383,13 @@ header.module-content {
 
 /* Topics list page */
 
+.media-grid.topics {
+  color: #eee;
+  background-color: #0196cd;
+}
+
 .media-item .media-image {
   max-height: 50px;
-  background-color: #0196cd;
 }
 
 .media-item .media-heading, .media-item .count {
