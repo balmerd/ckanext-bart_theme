@@ -63,7 +63,7 @@ $(document).ready(function() {
     $('.topic').removeClass('active behind-other-topics');
   }
 
-  $('.topic') // fade other menu items on hover
+  $('.topic') // fade other menu items on hovers
     .on('mouseover', '.dataset-menu-item', function() {
       $('.dataset-menu-item').addClass('unfocused');
       $(this).removeClass('unfocused');
@@ -72,6 +72,6 @@ $(document).ready(function() {
       $('.dataset-menu-item').removeClass('unfocused');
     });
 
-  // show dataset menu on hover
-  $('.topic').hover($.debounce(250, topicHoverIn), topicHoverOut);
+    // show dataset menu on hover
+    $('.topic').hover(_.debounce(topicHoverIn, 250, { leading: true, trailing: false }), topicHoverOut);
 });
